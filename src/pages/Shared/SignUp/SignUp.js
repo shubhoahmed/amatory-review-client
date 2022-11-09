@@ -31,7 +31,19 @@ const SignUp = () => {
                 setError('');
                 form.reset();
                 handleUpdateUserProfile(fullname, photoURL);
-                navigate(from, { replace: true })
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({ email: user.email })
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        localStorage.setItem('amatory-token', data.token);
+                        navigate(from, { replace: true });
+                    });
             })
             .catch(e => {
                 console.error(e);
@@ -55,7 +67,19 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 if (user) {
-                    navigate(from)
+                    fetch('http://localhost:5000/jwt', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify({ email: user.email })
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data);
+                            localStorage.setItem('amatory-token', data.token);
+                            navigate(from, { replace: true });
+                        });
                 }
                 console.log(user);
             })
