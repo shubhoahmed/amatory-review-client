@@ -6,7 +6,8 @@ const Home = () => {
     return (
         <div>
             <Services limit={3}> </Services>
-            <button onClick={() => navigate('/services')} className="btn btn-secondary">See All</button>
+
+            <button onClick={() => navigate('/services')} className="btn btn-secondary mt-3">See All</button>
 
         </div>
     );

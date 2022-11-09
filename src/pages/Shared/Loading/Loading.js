@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Loding = () => {
+const Loading = () => {
     return (
         <div className='flex justify-center'>
 
@@ -17,4 +17,4 @@ const Loding = () => {
     );
 };
 
-export default Loding;
+export default Loading;

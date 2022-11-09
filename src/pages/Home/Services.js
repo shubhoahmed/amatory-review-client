@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import Loding from '../Shared/Loading/Loding';
+import Loading from '../Shared/Loading/Loading';
 import ServiceCard from './ServiceCard';
 
 const Services = ({ limit }) => {
@@ -18,7 +18,7 @@ const Services = ({ limit }) => {
     }, [limit]);
 
     if (loading) {
-        return <Loding></Loding>
+        return <Loading></Loading>
     }
     return (
         <div className='grid lg:grid-cols-3 grid-cols-1 gap-5'>
