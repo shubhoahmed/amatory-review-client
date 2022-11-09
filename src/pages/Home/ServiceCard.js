@@ -12,7 +12,7 @@ const ServiceCard = ({ service }) => {
                 <p className=''>{description.slice(0, 100)}...</p>
                 <p className='text-2xl font-semibold'> Price: ${price}</p>
                 <div className="card-actions">
-                    <button onClick={() => navigate(`/services/${_id}`)} className="btn btn-primary w-full">View Details</button>
+                    <button onClick={() => navigate(`/services/${_id}`)} className="btn w-full">View Details</button>
                 </div>
             </div>
         </div>
