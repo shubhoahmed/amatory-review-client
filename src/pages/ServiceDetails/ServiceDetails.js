@@ -42,7 +42,7 @@ const ServiceDetails = () => {
         event.preventDefault()
         const reviewText = event.target.reviewText.value;
         const rating = event.target.rating.value;
-        const reviewObj = { email: user.email, username: user.displayName, userPhoto: user.photoURL, rating: rating, text: reviewText, serviceId: id, date: new Date() };
+        const reviewObj = { email: user.email, username: user.displayName, userPhoto: user.photoURL, rating: rating, text: reviewText, serviceId: id, serviceName: service.name, date: new Date() };
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
@@ -56,6 +56,7 @@ const ServiceDetails = () => {
     }
     return (
         <div className=''>
+            <h2 className='text-4xl text-center font-semibold my-2'>Service section</h2>
 
             <div className='p-5 w-full my-5'>
                 <img className='w-96' src={service.img} alt="" />
@@ -65,6 +66,7 @@ const ServiceDetails = () => {
             </div>
 
             <div className='w-full my-3 px-5'>
+                <h2 className='text-4xl text-center font-semibold my-2'>Review section</h2>
                 <div className='grid lg:grid-cols-3 grid-cols-1 gap-5'>
                     {
                         reviews.map(review => <ReviewCard
