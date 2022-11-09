@@ -5,7 +5,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <RouterProvider router={router}></RouterProvider>
     </div>
   );
