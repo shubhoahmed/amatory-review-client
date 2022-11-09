@@ -2,8 +2,8 @@ import React from 'react';
 
 const AddServices = () => {
     return (
-        <div className='container mx-auto'>
-            <h2>This is add service page</h2>
+        <div className='container w-1/2 mx-auto'>
+            <h2 className='text-center text-xl font-bold my-2'>Add a Service</h2>
 
             <form>
                 <div>

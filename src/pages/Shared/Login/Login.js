@@ -31,7 +31,7 @@ const Login = () => {
                 form.reset();
                 setError('');
 
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://amatory-review-server-side.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -61,7 +61,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 if (user) {
-                    fetch('http://localhost:5000/jwt', {
+                    fetch('https://amatory-review-server-side.vercel.app/jwt', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

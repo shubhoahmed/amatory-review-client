@@ -33,7 +33,7 @@ const SignUp = () => {
                 setError('');
                 form.reset();
                 handleUpdateUserProfile(fullname, photoURL);
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://amatory-review-server-side.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -70,7 +70,7 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 if (user) {
-                    fetch('http://localhost:5000/jwt', {
+                    fetch('https://amatory-review-server-side.vercel.app/jwt', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

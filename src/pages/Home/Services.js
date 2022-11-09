@@ -8,7 +8,7 @@ const Services = ({ limit }) => {
     const [loading, setLoading] = useState(false);
     useEffect(() => {
         setLoading(true);
-        fetch(`http://localhost:5000/services${limit ? `?limit=${limit}` : ""}`)
+        fetch(`https://amatory-review-server-side.vercel.app/services${limit ? `?limit=${limit}` : ""}`)
             .then(res => res.json())
             .then(data => {
                 setServices(data)

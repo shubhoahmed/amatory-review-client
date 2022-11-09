@@ -16,7 +16,7 @@ const ServiceDetails = () => {
     const [loading, setLoading] = useState(false);
     useEffect(() => {
         setLoading(true);
-        fetch(`http://localhost:5000/services/${id}`)
+        fetch(`https://amatory-review-server-side.vercel.app/services/${id}`)
             .then(res => res.json())
             .then(data => {
                 setService(data)
@@ -26,7 +26,7 @@ const ServiceDetails = () => {
     }, [id]);
     useEffect(() => {
         setLoading(true);
-        fetch(`http://localhost:5000/reviews/${id}`)
+        fetch(`https://amatory-review-server-side.vercel.app/reviews/${id}`)
             .then(res => res.json())
             .then(data => {
                 setReviews(data)
@@ -44,7 +44,7 @@ const ServiceDetails = () => {
         const reviewText = event.target.reviewText.value;
         const rating = event.target.rating.value;
         const reviewObj = { email: user.email, username: user.displayName, userPhoto: user.photoURL, rating: rating, text: reviewText, serviceId: id, serviceName: service.name, date: Date.now() };
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://amatory-review-server-side.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json', 'authorizartion': localStorage.getItem('amatory-token')

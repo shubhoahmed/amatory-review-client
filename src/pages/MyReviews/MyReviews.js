@@ -14,7 +14,7 @@ const MyReviews = () => {
 
         if (user?.email) {
             setLoading(true);
-            fetch(`http://localhost:5000/reviewsByEmail/${user.email}`)
+            fetch(`https://amatory-review-server-side.vercel.app/reviewsByEmail/${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setReviews(data)
@@ -30,6 +30,12 @@ const MyReviews = () => {
     }
     return (
         <div>
+            {reviews.length === 0 &&
+
+
+                <div className='h-screen flex justify-center items-center'><h1 className='font-bold text-center text-xl'>No reviews were added</h1></div>
+
+            }
             {
                 reviews.map(review => <ReviewDetails
                     key={review._id}
