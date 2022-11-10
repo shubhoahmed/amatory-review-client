@@ -1,6 +1,8 @@
 import React from 'react';
 import Services from './Services';
 import { useNavigate } from 'react-router-dom'
+import Experience from './Experience/Experience';
+import RandomCourse from './RandomCourse/RandomCourse';
 const Home = () => {
     const navigate = useNavigate();
     return (
@@ -10,6 +12,9 @@ const Home = () => {
             <div className='flex justify-center'>
                 <button onClick={() => navigate('/services')} className="btn mt-3 ">See All</button>
             </div>
+
+            <Experience></Experience>
+            <RandomCourse></RandomCourse>
 
         </div>
     );
