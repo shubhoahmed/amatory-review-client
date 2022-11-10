@@ -12,9 +12,15 @@ const MyReviews = () => {
 
     useEffect(() => {
 
-        if (user?.email) {
+        if (user) {
+            console.log(user.email);
             setLoading(true);
-            fetch(`https://amatory-review-server-side.vercel.app/reviewsByEmail/${user.email}`)
+            fetch(`https://amatory-review-server-side.vercel.app/reviewsByEmail/${user.email}`, {
+                method: 'GET',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('amatory-token')}`
+                },
+            })
                 .then(res => res.json())
                 .then(data => {
                     setReviews(data)
@@ -29,7 +35,7 @@ const MyReviews = () => {
         return <Loading></Loading>
     }
     return (
-        <div>
+        <div className='grid lg:grid-cols-4 grid-cols-1 gap-5'>
             {reviews.length === 0 &&
 
 

@@ -9,10 +9,10 @@ const AddServices = () => {
         const price = event.target.price.value;
         const description = event.target.description.value;
         const serviceObj = { name, img, price, description };
-        fetch('https://amatory-review-server-side.vercel.app/reviews', {
+        fetch('https://amatory-review-server-side.vercel.app/services', {
             method: 'POST',
             headers: {
-                'Content-type': 'application/json', 'authorizartion': localStorage.getItem('amatory-token')
+                'Content-type': 'application/json', 'authorization': `Bearer ${localStorage.getItem('amatory-token')}`
             },
             body: JSON.stringify(serviceObj)
         })
