@@ -13,7 +13,7 @@ const MyReviews = () => {
     useEffect(() => {
 
         if (user) {
-            console.log(user.email);
+
             setLoading(true);
             fetch(`https://amatory-review-server-side.vercel.app/reviewsByEmail/${user.email}`, {
                 method: 'GET',
