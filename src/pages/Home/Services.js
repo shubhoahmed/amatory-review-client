@@ -20,6 +20,7 @@ const Services = ({ limit }) => {
     if (loading) {
         return <Loading></Loading>
     }
+
     return (
         <div className='grid lg:grid-cols-3 grid-cols-1 gap-5'>
             {

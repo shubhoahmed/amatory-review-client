@@ -5,6 +5,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 import { useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider';
 import Loading from '../Loading/Loading';
+import useTitle from '../../../Hocks/hockTitle/HockTitle';
 
 const Login = () => {
 
@@ -80,6 +81,7 @@ const Login = () => {
                 console.error('error: ', error)
             })
     }
+    useTitle('Login');
     return (
         <div>
             <section className="bg-gray-50 dark:bg-gray-900">

@@ -2,9 +2,11 @@ import React from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { useNavigate } from 'react-router-dom'
 
+
 const ServiceCard = ({ service }) => {
     const navigate = useNavigate();
     const { name, img, price, _id, description } = service;
+
     return (
         <div className="card bg-base-100 shadow-xl">
             <figure>

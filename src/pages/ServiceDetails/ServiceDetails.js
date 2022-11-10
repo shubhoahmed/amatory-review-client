@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom'
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../Hocks/hockTitle/HockTitle';
 import Loading from '../Shared/Loading/Loading';
 import ReviewCard from './ReviewCard';
 
@@ -10,10 +11,12 @@ const ServiceDetails = () => {
     const { user } = useContext(AuthContext);
     const location = useLocation();
 
+
     const { id } = useParams();
     const [service, setService] = useState([]);
     const [reviews, setReviews] = useState([]);
     const [loading, setLoading] = useState(false);
+    useTitle(service.name ? service.name : 'Loading...');
     useEffect(() => {
         setLoading(true);
         fetch(`https://amatory-review-server-side.vercel.app/services/${id}`)

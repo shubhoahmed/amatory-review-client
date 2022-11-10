@@ -1,5 +1,6 @@
 import React from 'react';
 import { toast } from 'react-toastify'
+import useTitle from '../../Hocks/hockTitle/HockTitle';
 
 const AddServices = () => {
     const handleAddService = (event) => {
@@ -24,6 +25,7 @@ const AddServices = () => {
             })
 
     }
+    useTitle('Add Service');
     return (
         <div className='container w-1/2 mx-auto'>
             <h2 className='text-center text-xl font-bold my-2'>Add a Service</h2>

@@ -3,7 +3,9 @@ import Services from './Services';
 import { useNavigate } from 'react-router-dom'
 import Experience from './Experience/Experience';
 import RandomCourse from './RandomCourse/RandomCourse';
+import useTitle from '../../Hocks/hockTitle/HockTitle';
 const Home = () => {
+    useTitle('Home');
     const navigate = useNavigate();
     return (
         <div className='my-10'>

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../Hocks/hockTitle/HockTitle';
 import ReviewDetails from '../ReviewDetails/ReviewDetails';
 import Loading from '../Shared/Loading/Loading';
 
@@ -9,6 +10,7 @@ const MyReviews = () => {
     const [reviews, setReviews] = useState([]);
 
     const [loading, setLoading] = useState([]);
+    useTitle('My Review');
 
     useEffect(() => {
 
